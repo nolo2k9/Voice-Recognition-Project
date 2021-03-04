@@ -9,7 +9,7 @@ public class GrammerScript : MonoBehaviour
     private GrammarRecognizer gr;
 
     private void Start(){
-        Debug.Log("puss");
+        
         gr = new GrammarRecognizer(Application.streamingAssetsPath + "/SimpleGrammar.xml", ConfidenceLevel.Medium);
         gr.OnPhraseRecognized += GR_OnPhraseRecognized;
         gr.Start();
