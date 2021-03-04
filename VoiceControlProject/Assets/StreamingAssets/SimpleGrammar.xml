@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<grammar xml:lang="en" root="rightorleft"
+<grammar xml:lang="en" root="rightorleftorstop"
 tag-format="semantics/1.0" version="1.0"
 xmlns="http://www.w3.org/2001/06/grammar">
 
-  <rule id="rightorleft">
+  <rule id="rightorleftorstop">
     <one-of>
       <item>
         <ruleref uri="#right"/>
       </item>
       <item>
         <ruleref uri="#left"/>
+      </item>
+      <item>
+        <ruleref uri="#stop"/>
       </item>
     </one-of>
   </rule>
@@ -21,6 +24,10 @@ xmlns="http://www.w3.org/2001/06/grammar">
 
   <rule id="right">
     <item>right</item>
+  </rule>
+
+   <rule id="stop">
+    <item>stop</item>
   </rule>
 
 </grammar>

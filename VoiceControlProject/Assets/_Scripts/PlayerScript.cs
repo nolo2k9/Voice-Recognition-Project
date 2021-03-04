@@ -18,41 +18,63 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("Grammer loaded and recogniser started");
 
     }
+
+    private enum Direction
+    {
+        Stop,
+        Left,
+        Right
+    }
+
+    private Direction currentDirection;
+
+    private void Update()
+    {
+        switch(currentDirection)
+        {
+            case Direction.Left:
+                transform.Translate(Vector3.right * -2 * Time.deltaTime);
+                break;
+
+            case Direction.Right:
+                transform.Translate(Vector3.right * 2 * Time.deltaTime);
+                break;
+            
+            case Direction.Stop:
+                transform.Translate(Vector3.right * 0 * Time.deltaTime);
+                break;
+        }
+    }
+
     private void GR_OnPhraseRecognized(PhraseRecognizedEventArgs args)
     {
-        StringBuilder message = new StringBuilder();
-        SemanticMeaning[] meanings = args.semanticMeanings;
-
+        var message = new StringBuilder();
+        var meanings = args.semanticMeanings;
         
-            foreach(SemanticMeaning meaning in meanings)
+        foreach(var meaning in meanings)
+        {
+            var keyString = meaning.key.Trim();
+            var valueString = meaning.values[0].Trim();
+
+            message.Append($"Key: {keyString}, Value: {valueString}");
+            
+            switch(valueString) 
             {
-                string keyString = meaning.key.Trim();
-                //Get meanings
-                string valueString = meaning.values[0].Trim();
-                //output phrase
-                message.Append("Key: " + keyString + ", Value: " + valueString );
-                //if left is said
-                if(valueString == "left"){
-                    //move left
-                    transform.Translate(new Vector3(-200 * Time.deltaTime,0,0));
-                    //transform.Translate(new Vector3(-200 * Time.deltaTime,0,0));
-                }
+                case "left":
+                    currentDirection = Direction.Left;
+                    break;
                 
-                //if right is said
-                if(valueString == "right"){
-                    //move right
-                    transform.Translate(new Vector3(200 * Time.deltaTime,0,0));
-                    
-                
-                }
+                case "right":
+                    currentDirection = Direction.Right;
+                    break;
 
+                case "stop":
+                    currentDirection = Direction.Stop;
+                    break;
             }
-
-        
-       
+        }
 
         Debug.Log(message);
-
     }
 
     
