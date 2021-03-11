@@ -104,7 +104,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &950100795244640176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,3 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef86475c5e2db46438fb3a0f05a2ef2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virusProjectile: {fileID: 3354608705364549296, guid: d90d1d05180efc145be3a87a61c232be,
+    type: 3}
+  virusProjectileClone: {fileID: 0}
+  virus: {fileID: 5241738124990964003}

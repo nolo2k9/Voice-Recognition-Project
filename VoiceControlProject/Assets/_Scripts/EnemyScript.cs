@@ -8,8 +8,14 @@ public class EnemyScript : MonoBehaviour
     float timer = 0;
     float timeToMove = 0.5f;
     int numberOfMovements = 0;
-
     float speed = 0.25f;
+    public GameObject virusProjectile;
+    public GameObject virusProjectileClone;
+    public GameObject virus;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +40,17 @@ public class EnemyScript : MonoBehaviour
             numberOfMovements = -1;
             speed = -speed;
             timer = 0;
+
+        }
+
+        EnemyAttack();
+    }
+
+    void EnemyAttack()
+    {
+        if(Random.Range(0f, 500f) < 1)
+        {
+            virusProjectileClone = Instantiate(virusProjectile, new Vector3(virus.transform.position.x, virus.transform.position.y - 0.4f, 0), virus.transform.rotation) as GameObject;
 
         }
     }
