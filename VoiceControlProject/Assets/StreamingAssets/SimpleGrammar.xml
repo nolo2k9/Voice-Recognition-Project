@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<grammar xml:lang="en" root="rightorleftorstop"
+<grammar xml:lang="en" root="controls"
 tag-format="semantics/1.0" version="1.0"
 xmlns="http://www.w3.org/2001/06/grammar">
 
-  <rule id="rightorleftorstop">
+  <rule id="controls">
     <one-of>
       <item>
         <ruleref uri="#right"/>
@@ -14,6 +14,9 @@ xmlns="http://www.w3.org/2001/06/grammar">
       </item>
       <item>
         <ruleref uri="#stop"/>
+      </item>
+       <item>
+        <ruleref uri="#shoot"/>
       </item>
     </one-of>
   </rule>
@@ -26,8 +29,12 @@ xmlns="http://www.w3.org/2001/06/grammar">
     <item>right</item>
   </rule>
 
-   <rule id="stop">
+  <rule id="stop">
     <item>stop</item>
+  </rule>
+
+  <rule id="shoot">
+    <item>shoot</item>
   </rule>
 
 </grammar>

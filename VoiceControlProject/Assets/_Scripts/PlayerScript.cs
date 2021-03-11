@@ -8,10 +8,15 @@ using UnityEngine.Windows.Speech;   // grammar recogniser
 public class PlayerScript : MonoBehaviour
 {
    private GrammarRecognizer gr;
-   public Rigidbody2D playerRb;
+   public GameObject player;
+   public GameObject projectile;
+   public GameObject projectileClone;
+   public float timeBetweenShots;
+   private float shotTime;
+
 
     private void Start(){
-        playerRb = this.GetComponent<Rigidbody2D>(); 
+       
         gr = new GrammarRecognizer(Application.streamingAssetsPath + "/SimpleGrammar.xml", ConfidenceLevel.Medium);
         gr.OnPhraseRecognized += GR_OnPhraseRecognized;
         gr.Start();
@@ -23,7 +28,7 @@ public class PlayerScript : MonoBehaviour
     {
         Stop,
         Left,
-        Right
+        Right,
     }
 
     private Direction currentDirection;
@@ -33,17 +38,19 @@ public class PlayerScript : MonoBehaviour
         switch(currentDirection)
         {
             case Direction.Left:
-                transform.Translate(Vector3.right * -2 * Time.deltaTime);
+                transform.Translate(new Vector3(-2 * Time.deltaTime, 0, 0));
                 break;
 
             case Direction.Right:
-                transform.Translate(Vector3.right * 2 * Time.deltaTime);
+                transform.Translate(new Vector3(2 * Time.deltaTime, 0, 0));
                 break;
             
             case Direction.Stop:
-                transform.Translate(Vector3.right * 0 * Time.deltaTime);
-                break;
+                transform.Translate(new Vector3(0 * Time.deltaTime, 0, 0));
+                break;        
         }
+
+        shoot();
     }
 
     private void GR_OnPhraseRecognized(PhraseRecognizedEventArgs args)
@@ -77,6 +84,19 @@ public class PlayerScript : MonoBehaviour
         Debug.Log(message);
     }
 
+   void shoot(){
+       
+       if(Input.GetKeyDown(KeyCode.Space)){
+        
+        if(Time.time >= shotTime)
+        {
+            projectileClone = Instantiate(projectile, new Vector3(player.transform.position.x, player.transform.position.y + 0.8f, 0), player.transform.rotation) as GameObject;
+            shotTime = Time.time + timeBetweenShots;
+
+        }
+
+       }
+   }
     
     private void OnApplicationQuit()
     {
