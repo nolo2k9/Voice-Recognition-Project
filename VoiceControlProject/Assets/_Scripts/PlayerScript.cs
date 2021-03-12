@@ -24,30 +24,34 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    private enum Direction
+    private enum Actions
     {
         Stop,
         Left,
         Right,
+        Pause,
+        Continue
     }
 
-    private Direction currentDirection;
+    private Actions currentActions;
 
     private void Update()
     {
-        switch(currentDirection)
+        switch(currentActions)
         {
-            case Direction.Left:
+            case Actions.Left:
                 transform.Translate(new Vector3(-2 * Time.deltaTime, 0, 0));
                 break;
 
-            case Direction.Right:
+            case Actions.Right:
                 transform.Translate(new Vector3(2 * Time.deltaTime, 0, 0));
                 break;
             
-            case Direction.Stop:
+            case Actions.Stop:
                 transform.Translate(new Vector3(0 * Time.deltaTime, 0, 0));
-                break;        
+                break;     
+
+            
         }
 
         shoot();
@@ -68,16 +72,18 @@ public class PlayerScript : MonoBehaviour
             switch(valueString) 
             {
                 case "left":
-                    currentDirection = Direction.Left;
+                    currentActions = Actions.Left;
                     break;
                 
                 case "right":
-                    currentDirection = Direction.Right;
+                    currentActions = Actions.Right;
                     break;
 
                 case "stop":
-                    currentDirection = Direction.Stop;
+                    currentActions = Actions.Stop;
                     break;
+
+               
             }
         }
 

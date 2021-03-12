@@ -18,10 +18,16 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
 
-        if (collision.gameObject.tag =="Covid")
+        if (collision.gameObject.tag =="Covid" || collision.gameObject.tag =="Virus" )
         {
+            if(collision.gameObject.tag =="Covid")
+            {
+                GameManager.points +=5;
+            }
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+           
+           
         }
     }
 }

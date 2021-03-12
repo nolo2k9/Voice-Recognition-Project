@@ -5,8 +5,8 @@ using UnityEngine;
 public class VirusProjectileScript : MonoBehaviour
 {
 
-    void Update()
-    {
+    Vector3 respawn = new Vector3(0,-3,0);
+    void Update()    {
         transform.Translate(new Vector3(0, -5 * Time.deltaTime, 0));
     }
 
@@ -14,8 +14,14 @@ public class VirusProjectileScript : MonoBehaviour
 
         if (collision.gameObject.tag =="Player")
         {
-            Destroy(collision.gameObject);
             Destroy(this.gameObject);
+            GameManager.lives --;
+            if(GameManager.lives < 1)
+            {
+                Destroy(collision.gameObject);
+            }
+           
+           
         }
     }
 }

@@ -15,9 +15,6 @@ xmlns="http://www.w3.org/2001/06/grammar">
       <item>
         <ruleref uri="#stop"/>
       </item>
-       <item>
-        <ruleref uri="#shoot"/>
-      </item>
     </one-of>
   </rule>
 
@@ -33,8 +30,5 @@ xmlns="http://www.w3.org/2001/06/grammar">
     <item>stop</item>
   </rule>
 
-  <rule id="shoot">
-    <item>shoot</item>
-  </rule>
 
 </grammar>
