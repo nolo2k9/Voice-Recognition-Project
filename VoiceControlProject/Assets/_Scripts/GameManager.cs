@@ -8,14 +8,17 @@ public class GameManager : MonoBehaviour
     public static int lives = 3;
     public static int points = 0;
     public static bool isPaused = false;
+    public static int bullets = 6;
 
     public Text livesCount;
     public Text scoreCount;
+    public Text bulletCount;
     // Start is called before the first frame update
     void Start()
     {
         livesCount.text = "Lives: " + lives;
         scoreCount.text = "Points: " + points;
+        bulletCount.text = "Bullets: " + bullets;
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         livesCount.text = "Lives: " + lives;
         scoreCount.text = "Points: " + points;
+        bulletCount.text = "Bullets: " + bullets;
         
         if(isPaused)
         {

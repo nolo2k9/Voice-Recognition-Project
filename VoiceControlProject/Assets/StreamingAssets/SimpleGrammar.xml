@@ -1,34 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
-<grammar xml:lang="en" root="controls"
-tag-format="semantics/1.0" version="1.0"
+<grammar xml:lang="en-US" mode="voice" 
+root="controls" tag-format="semantics/1.0" version="1.0"
 xmlns="http://www.w3.org/2001/06/grammar">
 
   <rule id="controls">
     <one-of>
       <item>
-        <ruleref uri="#right"/>
+        <ruleref uri="#directions"/>
       </item>
       <item>
-        <ruleref uri="#left"/>
+        <ruleref uri="#pause"/>
       </item>
       <item>
-        <ruleref uri="#stop"/>
+        <ruleref uri="#exit"/>
+      </item>
+      <item>
+        <ruleref uri="#reload"/>
       </item>
     </one-of>
   </rule>
 
-  <rule id="left">
+  <rule id="directions">
+  <one-of>
+    <item>go left</item>
     <item>left</item>
-  </rule>
-
-  <rule id="right">
+    <item>move left</item>
+    <item>go right</item>
     <item>right</item>
-  </rule>
-
-  <rule id="stop">
+    <item>move right</item>
     <item>stop</item>
+    <item>stop moving</item>
+  </one-of>
   </rule>
 
+  <rule id="pause">
+  <one-of>
+    <item>pause game </item>
+    <item>pause</item>
+    <item>resume game</item>
+    <item>resume</item>
+  </one-of>
+  </rule>
+
+  <rule id="exit">
+  <one-of>
+    <item>exit </item>
+    <item>quit the game</item>
+    <item>exit the game</item>
+    <item>exit game</item>
+    <item>quit game</item>
+    <item>quit</item>
+  </one-of>
+  </rule>
+
+  <rule id="reload">
+  <one-of>
+  <item>reload</item>
+  <item>reload gun</item>
+  </one-of>
+  </rule>
 
 </grammar>
