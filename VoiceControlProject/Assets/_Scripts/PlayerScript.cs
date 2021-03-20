@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;  // for stringbuilder
 using UnityEngine;
 using UnityEngine.Windows.Speech;   // grammar recogniser
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -32,7 +33,8 @@ public class PlayerScript : MonoBehaviour
         Menu,
         Play,
         Exit,
-        Reload
+        Reload,
+        Main
     }
 
     private Actions currentActions;
@@ -66,7 +68,12 @@ public class PlayerScript : MonoBehaviour
                 Debug.Log("Reloaded");
                 GameManager.bullets = 6;
                 shoot();
-                break;                                 
+                break;  
+
+            case Actions.Main:
+                //load main scene
+                SceneManager.LoadScene("Main", LoadSceneMode.Single);
+                break;                                
         }
 
         shoot();
@@ -117,14 +124,19 @@ public class PlayerScript : MonoBehaviour
                 case "quit":
                 case "quit game":
                 case "quit the game":
-                case "exit":
-                case "exit game":
-                case "exit the game":
                     currentActions = Actions.Exit;
                     break;
 
                 case "reload":
                     currentActions = Actions.Reload;
+                    break;
+
+                case "quit to menu":
+                case "main menu":
+                case "exit game":
+                case "exit":
+                case "stop playing":
+                    currentActions = Actions.Main;
                     break;
                
             }

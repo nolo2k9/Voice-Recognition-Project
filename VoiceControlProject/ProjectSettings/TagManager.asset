@@ -7,6 +7,8 @@ TagManager:
   - Covid
   - Virus
   - Wall
+  - Windows
+  - Main
   layers:
   - Default
   - TransparentFX
