@@ -18,6 +18,9 @@ xmlns="http://www.w3.org/2001/06/grammar">
       <item>
         <ruleref uri="#reload"/>
       </item>
+      <item>
+        <ruleref uri="#exit to menu"/>
+      </item>
     </one-of>
   </rule>
 
@@ -45,10 +48,7 @@ xmlns="http://www.w3.org/2001/06/grammar">
 
   <rule id="exit">
   <one-of>
-    <item>exit </item>
     <item>quit the game</item>
-    <item>exit the game</item>
-    <item>exit game</item>
     <item>quit game</item>
     <item>quit</item>
   </one-of>
@@ -58,6 +58,17 @@ xmlns="http://www.w3.org/2001/06/grammar">
   <one-of>
   <item>reload</item>
   <item>reload gun</item>
+  </one-of>
+  </rule>
+
+  <rule id="exit to menu">
+  <one-of>
+  <item>quit to menu</item>
+  <item>main menu</item>
+  <item>exit game</item>
+  <item>exit the game</item>
+  <item>exit </item>
+  <item>stop playing</item>
   </one-of>
   </rule>
 

@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
    
     private void Start(){
        
-        gr = new GrammarRecognizer(Application.streamingAssetsPath + "/SimpleGrammar.xml", ConfidenceLevel.Medium);
+        gr = new GrammarRecognizer(Application.streamingAssetsPath + "/GameGrammar.xml", ConfidenceLevel.Medium);
         gr.OnPhraseRecognized += GR_OnPhraseRecognized;
         gr.Start();
         Debug.Log("Grammer loaded and recogniser started");
@@ -109,6 +109,8 @@ public class PlayerScript : MonoBehaviour
 
                 case "resume game":
                 case "resume":
+                case "Start":
+                case "Start Game":
                     currentActions = Actions.Play;
                     break;
 
