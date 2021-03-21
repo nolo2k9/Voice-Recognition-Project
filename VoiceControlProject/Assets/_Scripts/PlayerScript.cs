@@ -19,14 +19,19 @@ public class PlayerScript : MonoBehaviour
     public Text message;
     private bool isDead = false;
     public GameObject pausePanel;
+    public GameObject gameOverPanel;
    
    
     private void Start(){
-       
+
+        isDead = false;
+        GameManager.isPaused = false;
         gr = new GrammarRecognizer(Application.streamingAssetsPath + "/GameGrammar.xml", ConfidenceLevel.Medium);
         gr.OnPhraseRecognized += GR_OnPhraseRecognized;
         gr.Start();
         Debug.Log("Grammer loaded and recogniser started");
+        //change message
+        message.text = "Say Left to go left or right to go right" + "\n" + "Say pause to see full list of commands";
 
     }
 
@@ -40,67 +45,82 @@ public class PlayerScript : MonoBehaviour
         Exit,
         Reload,
         Main,
-        Sprint,
+        Flee,
+        Restart
     }
 
     private Actions currentActions;
 
     private void Update()
     {
-       
-        switch(currentActions)
-        {
-            case Actions.Left:
-                transform.Translate(new Vector3(-5 * Time.deltaTime, 0, 0));
-                break;
+        
+       if (isDead!= true)
+       {
+            switch(currentActions)
+            {
+                case Actions.Left:
+                    transform.Translate(new Vector3(-5 * Time.deltaTime, 0, 0));
+                    break;
 
-            case Actions.Right:
-                transform.Translate(new Vector3(5 * Time.deltaTime, 0, 0));
-                break;
-            
-            case Actions.Stop:
-                transform.Translate(new Vector3(0 * Time.deltaTime, 0, 0));
-                break; 
+                case Actions.Right:
+                    transform.Translate(new Vector3(5 * Time.deltaTime, 0, 0));
+                    break;
+                
+                case Actions.Stop:
+                    transform.Translate(new Vector3(0 * Time.deltaTime, 0, 0));
+                    break; 
 
-            case Actions.Menu:
-                GameManager.isPaused = true;
-                pausePanel.SetActive(true);
-                break; 
+                case Actions.Menu:
+                    GameManager.isPaused = true;
+                    pausePanel.SetActive(true);
+                    break; 
 
-            case Actions.Play:
-                GameManager.isPaused = false;
-                pausePanel.SetActive(false);
-                break; 
+                case Actions.Play:
+                    GameManager.isPaused = false;
+                    pausePanel.SetActive(false);
+                    break; 
 
-            case Actions.Reload:
-                Debug.Log("Reloaded");
-                GameManager.bullets = 6;
-                shoot();
-                break;  
+                case Actions.Reload:
+                    Debug.Log("Reloaded");
+                    GameManager.bullets = 6;
+                    shoot();
+                    break;  
 
-            case Actions.Main:
-                //load main scene
-                SceneManager.LoadScene("Main", LoadSceneMode.Single);
-                break;  
+                case Actions.Main:
+                    //load main scene
+                    SceneManager.LoadScene("Main", LoadSceneMode.Single);
+                    break;  
 
-            case Actions.Sprint:
-                transform.Translate(new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f)));
-                break;                                
+                case Actions.Flee:
+                    transform.Translate(new Vector3(Random.Range(-3.0f, 3.0f), 0, Random.Range(-3.0f, 3.0f)));
+                    break;   
+
+                case Actions.Restart:
+                    GameManager.lives = 3;
+                    GameManager.points = 0;
+                    PlayerPrefs.SetInt("PreviousScore", 0);
+                    GameManager.bullets = 6;
+                    SceneManager.LoadScene("Game", LoadSceneMode.Single);
+                    break;
+            }
+
         }
         if(GameManager.bullets == 0)
         {
              //change message
             message.text = "Reload";
         }
-        else{
-
+        else if(GameManager.lives == 0)
+        {
+              //change message
+            message.text = "You are DEAD"+ "\n" + "Say Exit to return to menu" + "\n" + "Say restart to play again";
+            GameManager.isPaused = true;
+            PlayerPrefs.SetInt("PreviousScore", GameManager.points);
+        }
+        else
+        {
             //change message
             message.text = " ";
-        }
-
-        if(GameManager.lives < 1)
-        {
-            isDead = true;
         }
 
         shoot();
@@ -167,7 +187,14 @@ public class PlayerScript : MonoBehaviour
                 
                 case "run":
                 case "sprint":
-                    currentActions = Actions.Sprint;
+                case "flee":
+                    currentActions = Actions.Flee;
+                    break;
+                
+                case "restart":
+                case "new game":
+                case "try again":
+                    currentActions = Actions.Restart;
                     break;
                
             }

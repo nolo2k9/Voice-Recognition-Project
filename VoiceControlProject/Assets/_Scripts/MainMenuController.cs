@@ -28,6 +28,7 @@ public class MainMenuController : MonoBehaviour
     {
         GameManager.lives = 3;
         GameManager.points = 0;
+        PlayerPrefs.SetInt("PreviousScore", 0);
         GameManager.bullets = 6;
         //load main scene
         SceneManager.LoadScene("Game", LoadSceneMode.Single);

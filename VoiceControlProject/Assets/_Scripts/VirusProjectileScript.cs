@@ -20,7 +20,7 @@ public class VirusProjectileScript : MonoBehaviour
             GameManager.lives --;
             if(GameManager.lives < 1)
             {
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
                
             }
            

@@ -14,6 +14,7 @@ public class WaveSpawner : MonoBehaviour
        public int count;
         //lentgh between enemy spawns
        public float timeBetweenSpawns;
+       
         
 
    }
@@ -30,8 +31,9 @@ public class WaveSpawner : MonoBehaviour
    //Reference to player object
    private Transform player;
    //Bool to handle if the waves are finshed
-    private bool isFinished;
-    public Text message;
+   private bool isFinished;
+   public Text message;
+   private float waveCount = 0;
 
    private void Start(){
 
@@ -39,6 +41,8 @@ public class WaveSpawner : MonoBehaviour
        player = GameObject.FindGameObjectWithTag("Player").transform;
        //passing in the wave index into coroutine to start the wave
        StartCoroutine(StartNextWave(currentWaveIndex));
+        //change message
+        message.text = "Wave: " + waveCount;
        
 
    }//Start
@@ -98,8 +102,9 @@ public class WaveSpawner : MonoBehaviour
            isFinished = false;
            if(currentWaveIndex + 1 < waves.Length)
            {
+                waveCount++;
                 //change message
-                message.text = "Wave: " + currentWaveIndex + 2;
+                message.text = "Wave: " + waveCount;
                currentWaveIndex ++;
                StartCoroutine(StartNextWave(currentWaveIndex));
            }

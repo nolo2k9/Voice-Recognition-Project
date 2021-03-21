@@ -18,6 +18,15 @@ xmlns="http://www.w3.org/2001/06/grammar">
       <item>
         <ruleref uri="#reload"/>
       </item>
+      <item>
+        <ruleref uri="#flee"/>
+      </item>
+      <item>
+        <ruleref uri="#menu"/>
+      </item>
+      <item>
+        <ruleref uri="#restart"/>
+      </item>
     </one-of>
   </rule>
 
@@ -45,10 +54,7 @@ xmlns="http://www.w3.org/2001/06/grammar">
 
   <rule id="exit">
   <one-of>
-    <item>exit </item>
     <item>quit the game</item>
-    <item>exit the game</item>
-    <item>exit game</item>
     <item>quit game</item>
     <item>quit</item>
   </one-of>
@@ -56,9 +62,38 @@ xmlns="http://www.w3.org/2001/06/grammar">
 
   <rule id="reload">
   <one-of>
-  <item>reload</item>
-  <item>reload gun</item>
+    <item>reload</item>
+    <item>reload gun</item>
   </one-of>
+  </rule>
+
+  <rule id="flee">
+   <one-of>
+      <item>sprint</item>
+      <item>run</item>
+      <item>flee</item>
+   </one-of>
+  </rule>
+
+  <rule id="restart">
+   <one-of>
+      <item>start again</item>
+      <item>restart</item>
+      <item>replay</item>
+      <item>try again</item>
+      <item>new game</item>
+   </one-of>
+  </rule>
+
+  <rule id="menu">
+    <one-of>
+      <item>quit to menu</item>
+      <item>main menu</item>
+      <item>exit game</item>
+      <item>exit the game</item>
+      <item>exit </item>
+      <item>stop playing</item>
+    </one-of>
   </rule>
 
 </grammar>

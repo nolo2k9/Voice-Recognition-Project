@@ -54,4 +54,20 @@ public class EnemyScript : MonoBehaviour
 
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision){
+
+        if (collision.gameObject.tag =="Player")
+        {
+            Destroy(this.gameObject);
+            GameManager.lives --;
+            if(GameManager.lives < 1)
+            {
+                //Destroy(collision.gameObject);
+               
+            }
+           
+           
+        }
+    }
 }

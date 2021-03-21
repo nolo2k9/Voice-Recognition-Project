@@ -24,6 +24,10 @@ public class Projectile : MonoBehaviour
             {
                 GameManager.points +=5;
             }
+            if(collision.gameObject.tag =="Virus")
+            {
+                GameManager.points +=1;
+            }
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
            
