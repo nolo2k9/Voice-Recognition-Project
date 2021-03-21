@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static int points = 0;
     public static bool isPaused = false;
     public static int bullets = 6;
+    public GameObject gameOverPanel;
 
     public Text livesCount;
     public Text scoreCount;
@@ -18,7 +19,7 @@ public class GameManager : MonoBehaviour
     {
         livesCount.text = "Lives: " + lives;
         scoreCount.text = "Points: " + points;
-        bulletCount.text = "Bullets: " + bullets;
+        bulletCount.text = "Vaccines: " + bullets;
     }
 
     // Update is called once per frame
@@ -26,7 +27,12 @@ public class GameManager : MonoBehaviour
     {
         livesCount.text = "Lives: " + lives;
         scoreCount.text = "Points: " + points;
-        bulletCount.text = "Bullets: " + bullets;
+        bulletCount.text = "Vaccines: " + bullets;
+        
+        if(lives < 1)
+        {
+            gameOverPanel.SetActive(true);
+        }
         
         if(isPaused)
         {

@@ -21,55 +21,65 @@ xmlns="http://www.w3.org/2001/06/grammar">
       <item>
         <ruleref uri="#exit to menu"/>
       </item>
+       <item>
+        <ruleref uri="#sprint"/>
+      </item>
     </one-of>
   </rule>
 
   <rule id="directions">
-  <one-of>
-    <item>go left</item>
-    <item>left</item>
-    <item>move left</item>
-    <item>go right</item>
-    <item>right</item>
-    <item>move right</item>
-    <item>stop</item>
-    <item>stop moving</item>
-  </one-of>
+    <one-of>
+      <item>go left</item>
+      <item>left</item>
+      <item>move left</item>
+      <item>go right</item>
+      <item>right</item>
+      <item>move right</item>
+      <item>stop</item>
+      <item>stop moving</item>
+    </one-of>
   </rule>
 
   <rule id="pause">
-  <one-of>
-    <item>pause game </item>
-    <item>pause</item>
-    <item>resume game</item>
-    <item>resume</item>
-  </one-of>
+    <one-of>
+      <item>pause game </item>
+      <item>pause</item>
+      <item>resume game</item>
+      <item>resume</item>
+    </one-of>
   </rule>
 
   <rule id="exit">
-  <one-of>
-    <item>quit the game</item>
-    <item>quit game</item>
-    <item>quit</item>
-  </one-of>
+    <one-of>
+      <item>quit the game</item>
+      <item>quit game</item>
+      <item>quit</item>
+    </one-of>
   </rule>
 
   <rule id="reload">
-  <one-of>
-  <item>reload</item>
-  <item>reload gun</item>
-  </one-of>
+    <one-of>
+      <item>reload</item>
+      <item>reload gun</item>
+    </one-of>
   </rule>
 
   <rule id="exit to menu">
-  <one-of>
-  <item>quit to menu</item>
-  <item>main menu</item>
-  <item>exit game</item>
-  <item>exit the game</item>
-  <item>exit </item>
-  <item>stop playing</item>
-  </one-of>
+    <one-of>
+      <item>quit to menu</item>
+      <item>main menu</item>
+      <item>exit game</item>
+      <item>exit the game</item>
+      <item>exit </item>
+      <item>stop playing</item>
+    </one-of>
+  </rule>
+
+  <rule id="sprint">
+   <one-of>
+      <item>sprint</item>
+      <item>run</item>
+   </one-of>
   </rule>
 
 </grammar>

@@ -26,6 +26,9 @@ public class MainMenuController : MonoBehaviour
     }
    public void LoadNewScene()
     {
+        GameManager.lives = 3;
+        GameManager.points = 0;
+        GameManager.bullets = 6;
         //load main scene
         SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }

@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Windows
   - Main
+  - score
   layers:
   - Default
   - TransparentFX

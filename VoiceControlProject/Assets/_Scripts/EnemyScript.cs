@@ -8,7 +8,7 @@ public class EnemyScript : MonoBehaviour
     float timer = 0;
     float timeToMove = 0.5f;
     int numberOfMovements = 0;
-    float speed = 0.25f;
+    float speed = 0.75f;
     public GameObject virusProjectile;
     public GameObject virusProjectileClone;
     public GameObject virus;

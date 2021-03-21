@@ -5,16 +5,21 @@ using System.Text;  // for stringbuilder
 using UnityEngine;
 using UnityEngine.Windows.Speech;   // grammar recogniser
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
-   private GrammarRecognizer gr;
-   public GameObject player;
-   public GameObject projectile;
-   public GameObject projectileClone;
-   public float timeBetweenShots;
-   private float shotTime;
-  
+    private GrammarRecognizer gr;
+    public GameObject player;
+    public GameObject projectile;
+    public GameObject projectileClone;
+    public float timeBetweenShots;
+    private float shotTime;
+    //Text
+    public Text message;
+    private bool isDead = false;
+    public GameObject pausePanel;
+   
    
     private void Start(){
        
@@ -34,7 +39,8 @@ public class PlayerScript : MonoBehaviour
         Play,
         Exit,
         Reload,
-        Main
+        Main,
+        Sprint,
     }
 
     private Actions currentActions;
@@ -58,10 +64,12 @@ public class PlayerScript : MonoBehaviour
 
             case Actions.Menu:
                 GameManager.isPaused = true;
+                pausePanel.SetActive(true);
                 break; 
 
             case Actions.Play:
                 GameManager.isPaused = false;
+                pausePanel.SetActive(false);
                 break; 
 
             case Actions.Reload:
@@ -73,7 +81,26 @@ public class PlayerScript : MonoBehaviour
             case Actions.Main:
                 //load main scene
                 SceneManager.LoadScene("Main", LoadSceneMode.Single);
+                break;  
+
+            case Actions.Sprint:
+                transform.Translate(new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f)));
                 break;                                
+        }
+        if(GameManager.bullets == 0)
+        {
+             //change message
+            message.text = "Reload";
+        }
+        else{
+
+            //change message
+            message.text = " ";
+        }
+
+        if(GameManager.lives < 1)
+        {
+            isDead = true;
         }
 
         shoot();
@@ -131,12 +158,16 @@ public class PlayerScript : MonoBehaviour
                     currentActions = Actions.Reload;
                     break;
 
-                case "quit to menu":
                 case "main menu":
                 case "exit game":
                 case "exit":
                 case "stop playing":
                     currentActions = Actions.Main;
+                    break;
+                
+                case "run":
+                case "sprint":
+                    currentActions = Actions.Sprint;
                     break;
                
             }
@@ -148,6 +179,7 @@ public class PlayerScript : MonoBehaviour
    void shoot(){
        
        if(Input.GetKeyDown(KeyCode.Space)){
+           
         
         if(Time.time >= shotTime && GameManager.bullets > 0 )
         {

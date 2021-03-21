@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class WaveSpawner : MonoBehaviour
    public class Wave {
        //contains how may enemies can be spawned inside this wave
        public EnemyScript[] enemies;
-       //hpw many enemies can be spawned inside the wave
+       //how many enemies can be spawned inside the wave
        public int count;
         //lentgh between enemy spawns
        public float timeBetweenSpawns;
+        
 
    }
    //Array to hold the number of waves
@@ -28,6 +30,8 @@ public class WaveSpawner : MonoBehaviour
    //Reference to player object
    private Transform player;
    //Bool to handle if the waves are finshed
+    private bool isFinished;
+    public Text message;
 
    private void Start(){
 
@@ -35,6 +39,7 @@ public class WaveSpawner : MonoBehaviour
        player = GameObject.FindGameObjectWithTag("Player").transform;
        //passing in the wave index into coroutine to start the wave
        StartCoroutine(StartNextWave(currentWaveIndex));
+       
 
    }//Start
 
@@ -63,6 +68,18 @@ public class WaveSpawner : MonoBehaviour
            Transform randomArea = spawnPoints[Random.Range(0, spawnPoints.Length)];
            //create new random enemy in random spot on map 
            Instantiate(randomEnemy, randomArea.position, randomArea.rotation);
+           //detect if current wave has ended
+            // if i is equal to currentWave.count -1 
+           if(i==currentWave.count -1)
+           {
+                isFinished = true;
+           } else
+           {
+               isFinished = false;
+           }
+
+           //wait an allotted ammount of time 
+           yield return new WaitForSeconds(currentWave.timeBetweenSpawns);
 
            //wait an allotted ammount of time 
            yield return new WaitForSeconds(currentWave.timeBetweenSpawns);
@@ -75,5 +92,17 @@ public class WaveSpawner : MonoBehaviour
     void Update()
     {
         
+        //if the wave has finished and no more enemys are alive inside the game wave done
+       if(isFinished == true && GameObject.FindGameObjectsWithTag("Covid").Length ==0)
+       {    //new wave
+           isFinished = false;
+           if(currentWaveIndex + 1 < waves.Length)
+           {
+                //change message
+                message.text = "Wave: " + currentWaveIndex + 2;
+               currentWaveIndex ++;
+               StartCoroutine(StartNextWave(currentWaveIndex));
+           }
+       }
     }
 }
