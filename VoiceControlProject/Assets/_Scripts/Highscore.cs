@@ -18,7 +18,7 @@ public class Highscore : MonoBehaviour
         highScoreText = GetComponent<Text>();
         //Output highsocre to string. PlayerPrefs allows the score to hold on the machine 
         highScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore", 0).ToString() + "\n" + 
-        "Previous Score: " + PlayerPrefs.GetInt("PreviousScore", 0).ToString();
+        "Previous Score: " + PlayerPrefs.GetInt("PreviousScore", GameManager.points).ToString();
         
     }//Start
 

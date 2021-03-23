@@ -122,6 +122,12 @@ public class PlayerScript : MonoBehaviour
             //change message
             message.text = " ";
         }
+        if(WaveSpawner.waveCount > 10)
+        {
+            //change message
+            message.text = "You Win"+ "\n" + "Say Exit to return to menu" + "\n" + "Say restart to play again";
+            GameManager.isPaused = true;
+        }
 
         shoot();
     }

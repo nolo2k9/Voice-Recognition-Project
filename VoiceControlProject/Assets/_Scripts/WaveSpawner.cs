@@ -33,7 +33,7 @@ public class WaveSpawner : MonoBehaviour
    //Bool to handle if the waves are finshed
    private bool isFinished;
    public Text message;
-   private float waveCount = 0;
+   public static int waveCount = 0;
 
    private void Start(){
 

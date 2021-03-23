@@ -1105,8 +1105,17 @@ MonoBehaviour:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    count: 5
+    timeBetweenSpawns: 3
+  - enemies:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    count: 7
     timeBetweenSpawns: 3
   - enemies:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
@@ -1119,38 +1128,7 @@ MonoBehaviour:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
-    timeBetweenSpawns: 3
-  - enemies:
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
-    timeBetweenSpawns: 3
-  - enemies:
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
+    count: 10
     timeBetweenSpawns: 3
   - enemies:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
@@ -1165,15 +1143,7 @@ MonoBehaviour:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
+    count: 12
     timeBetweenSpawns: 3
   - enemies:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
@@ -1191,12 +1161,27 @@ MonoBehaviour:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    count: 15
+    timeBetweenSpawns: 3
+  - enemies:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    count: 17
     timeBetweenSpawns: 3
   - enemies:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
@@ -1217,9 +1202,7 @@ MonoBehaviour:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
+    count: 18
     timeBetweenSpawns: 3
   - enemies:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
@@ -1242,7 +1225,7 @@ MonoBehaviour:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
+    count: 20
     timeBetweenSpawns: 3
   - enemies:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
@@ -1265,8 +1248,10 @@ MonoBehaviour:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
-    timeBetweenSpawns: 3
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    count: 22
+    timeBetweenSpawns: 4
   - enemies:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
@@ -1278,8 +1263,23 @@ MonoBehaviour:
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
     - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
-    count: 6
-    timeBetweenSpawns: 3
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    - {fileID: 2012794504058821610, guid: 58765a9f77fc0fc4fbcd22b80944265a, type: 3}
+    count: 25
+    timeBetweenSpawns: 6
   spawnPoints:
   - {fileID: 895133998}
   - {fileID: 900294132}
