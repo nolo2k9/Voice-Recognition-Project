@@ -4,30 +4,26 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    //projectile direction
     void Update()
     {
         transform.Translate(new Vector3(0, 5 * Time.deltaTime, 0));
     }
-
+    //handle collissions
     private void OnCollisionEnter2D(Collision2D collision){
-
+        //collision with object tags
         if (collision.gameObject.tag =="Covid" || collision.gameObject.tag =="Virus" )
         {
             if(collision.gameObject.tag =="Covid")
             {
-                GameManager.points +=5;
+                GameManager.points +=5;// give 5 points
             }
             if(collision.gameObject.tag =="Virus")
             {
-                GameManager.points +=1;
+                GameManager.points +=1;//give 1 point
             }
+            //destroy colliding object and projectile
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
            

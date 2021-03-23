@@ -5,10 +5,10 @@ using UnityEngine;
 public class Boundaries : MonoBehaviour
 {
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        //Stay within given boundaries
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -18f, 16f),
         Mathf.Clamp(transform.position.y, -4f, 4f), transform.position.z);
     }
